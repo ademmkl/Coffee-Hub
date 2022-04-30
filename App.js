@@ -8,16 +8,6 @@
  import { createNativeStackNavigator } from "@react-navigation/native-stack";
  import Home from './src/screens/Home';
  import Details from './src/screens/CoffeeDetails';
-
-
- import { useNavigation } from "@react-navigation/native";
-
- const nav = () => {
-  const navigation = useNavigation();
-   return(
-     <Details navigation = {navigation}/>
-   );
- }
  
  const Stack = createNativeStackNavigator()
 

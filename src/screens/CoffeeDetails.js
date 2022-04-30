@@ -10,8 +10,24 @@ import {
 
 class Details extends React.Component{
 
-    state={
-        styles : StyleSheet.create({
+    constructor(props){
+        super(props);
+        
+        this.state={
+            amount: 1,
+    
+            small: 0.2,
+            mid: 1,
+            big: 0.2,
+            size: "mid",
+    
+            oneCube:0.2,
+            twoCubes:1,
+            threeCubes:0.2,
+            cubes:2
+        }
+    
+        this.styles = StyleSheet.create({
             background: {
               backgroundColor: "#fff5de",
               flex: 1,
@@ -67,28 +83,16 @@ class Details extends React.Component{
                 alignItems:"center",
                 justifyContent:"center"
             }
-        }),
-
-        amount: 1,
-
-        small: 0.2,
-        mid: 1,
-        big: 0.2,
-        size: "mid",
-
-        oneCube:0.2,
-        twoCubes:1,
-        threeCubes:0.2,
-        cubes:2
+        });
     }
 
-    reduceamount = () =>{
+    reduceAmount = () =>{
         if(this.state.amount > 1){
             this.setState({amount: this.state.amount - 1});
         }
     }
 
-    raiseamount = () =>{
+    raiseAmount = () =>{
         this.setState({amount: this.state.amount + 1});
     }
     
@@ -125,36 +129,36 @@ class Details extends React.Component{
 
     render(){
         return(
-            <SafeAreaView style={this.state.styles.background}>
-                <View style={this.state.styles.menuBox}>
+            <SafeAreaView style={this.styles.background}>
+                <View style={this.styles.menuBox}>
                     <TouchableOpacity onPress={()=> this.props.navigation.navigate("Home")} style={{flexDirection:"column", marginLeft:25, width:20, height:20, justifyContent:"center"}}>
                         <View style={{width:14, height:2.5, backgroundColor:"rgba(0,0,0,0.7)", transform: [{rotate: "-45deg"}, { translateY:-4}]}}></View>
                         <View style={{width:14, height:2.5, backgroundColor:"rgba(0,0,0,0.7)", transform: [{rotate: "45deg"}, { translateY:4}]}}></View>
                     </TouchableOpacity>
                     <Text style={{fontSize:18, color:"black", fontWeight:"bold", marginLeft:90}}>Cappuccino</Text>
                 </View>
-                <View style={this.state.styles.coffeeSelf}>
+                <View style={this.styles.coffeeSelf}>
                     <Image source={{uri:"https://www.shareicon.net/data/2016/08/01/805158_coffee_512x512.png", width:100, height:100}} resizeMode="contain"/>
                 </View>
-                <View style={this.state.styles.coffeeDetails}>
-                    <View style={this.state.styles.count}>
+                <View style={this.styles.coffeeDetails}>
+                    <View style={this.styles.count}>
                         <View>
                             <Text style={{fontSize:16, fontWeight:"500", color:"black"}}>Cappuccino</Text>
                             <Text style={{fontSize:25, fontWeight:"600", color:"#caa472"}}><Text style={{fontSize:20, fontWeight:"600", color:"#caa472"}}>₺</Text>15</Text>
                         </View>
                         <View style={{flexDirection:"row"}}>
-                            <TouchableOpacity onPress={this.reduceamount} style={{height:30, width:35, backgroundColor:"#caa472", borderTopLeftRadius:15, borderBottomLeftRadius:15, alignItems:"center", justifyContent:"center"}}>
+                            <TouchableOpacity onPress={this.reduceAmount} style={{height:30, width:35, backgroundColor:"#caa472", borderTopLeftRadius:15, borderBottomLeftRadius:15, alignItems:"center", justifyContent:"center"}}>
                                 <Text style={{fontSize:18}}>—</Text>
                             </TouchableOpacity>
                             <View style={{height:30, paddingHorizontal: 10, alignItems:"center", justifyContent:"center"}}>
                                 <Text>{this.state.amount}</Text>
                             </View>
-                            <TouchableOpacity onPress={this.raiseamount} style={{height:30, width:35, backgroundColor:"#caa472", borderTopRightRadius:15, borderBottomRightRadius:15, alignItems:"center", justifyContent:"center"}}>
+                            <TouchableOpacity onPress={this.raiseAmount} style={{height:30, width:35, backgroundColor:"#caa472", borderTopRightRadius:15, borderBottomRightRadius:15, alignItems:"center", justifyContent:"center"}}>
                                 <Text style={{fontSize:18}}>+</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={this.state.styles.size}>
+                    <View style={this.styles.size}>
                         <Text style={{fontSize:16, fontWeight:"500", color:"black"}}>Size</Text>
                         <View style={{flexDirection:"row", alignItems:"baseline"}}>
                             <TouchableOpacity onPress={() => this.setSize("small")} activeOpacity={1}>
@@ -168,7 +172,7 @@ class Details extends React.Component{
                             </TouchableOpacity>
                        </View>
                     </View>
-                    <View style={this.state.styles.sugar}>
+                    <View style={this.styles.sugar}>
                         <Text style={{fontSize:16, fontWeight:"500", color:"black"}}>Sugar <Text style={{fontSize:15, fontWeight:"500", color:"rgba(0,0,0,0.3)"}}>(in cubes)</Text></Text>
                         <View style={{flexDirection:"row", alignItems:"flex-end", flex:1}}>
                             <TouchableOpacity onPress={() => this.setCubes(1)} style={{marginHorizontal:8}} activeOpacity={1}>
@@ -182,7 +186,7 @@ class Details extends React.Component{
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Home")} style={this.state.styles.add}>
+                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("Home")} style={this.styles.add}>
                         <Text style={{fontSize:16, color:"#fff"}}>Add to card</Text>
                     </TouchableOpacity>
                 </View>

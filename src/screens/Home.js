@@ -12,19 +12,34 @@ import React, {useEffect, useState} from 'react';
 
  const Home = () => {
 
-  const [coffees, setCoffees] = useState([])
-
-  useEffect(() => {
-    const getCoffees = async () => {
-      const res = await fetch("http://10.0.2.2:3000/coffees")
-
-      const data = await res.json()
-  
-      setCoffees(data)
+  const [coffees, setCoffees] = useState([
+    {
+      url:"https://freesvg.org/img/pitr_Coffee_cup_icon.png",
+      name: "Espresso",
+      id: 1
+    },
+    {
+      url:"https://www.shareicon.net/data/2016/08/01/805158_coffee_512x512.png",
+      name:"Cappuccino",
+      id:2
+    },
+    {
+      url:"https://cdn-icons-png.flaticon.com/512/172/172869.png",
+      name:"Macchiato",
+      id:3
+    },
+    {
+      url:"https://cdn.iconscout.com/icon/free/png-256/mocha-3962507-3283389.png",
+      name:"Mocha",
+      id:4
+    },
+    {
+      url:"https://cdn-icons-png.flaticon.com/512/1365/1365585.png",
+      name:"Latte",
+      id:5
     }
-  
-    getCoffees()
-  }, [])
+  ]);
+
 
   return (
     <SafeAreaView style={styles.background}>
@@ -53,9 +68,9 @@ import React, {useEffect, useState} from 'react';
             )
           }
           <View style={styles.navBox}>
-             <Image source={{uri:"https://cdn2.iconfinder.com/data/icons/the-most-useful-basic-for-mobile-app-or-website-ou/32/the_most_useful_icon_for_mobile_app_or_website-01-512.png", width:28, height:28}} style={{opacity:0.3}} resizeMode="contain"></Image>
+             <Image source={{uri:"https://cdn2.iconfinder.com/data/icons/the-most-useful-basic-for-mobile-app-or-website-ou/32/the_most_useful_icon_for_mobile_app_or_website-01-512.png", width:28, height:28}} style={{opacity:1}} resizeMode="contain"></Image>
              <Image source={{uri:"https://cdn.icon-icons.com/icons2/2768/PNG/512/location_icon_176656.png", width:45, height:60}} style={{opacity:0.3}} resizeMode="contain"></Image>
-             <Image source={{uri:"https://static.thenounproject.com/png/1219977-200.png", width:35, height:35}} style={{opacity:0.3}} resizeMode="contain"></Image>
+             <Image source={{uri:"https://static.thenounproject.com/png/1219977-200.png", width:35, height:35}} style={{opacity:0.4}} resizeMode="contain"></Image>
              <Image source={{uri:"https://icon-library.com/images/icon-user/icon-user-24.jpg", width:28, height:28}} style={{opacity:0.3}} resizeMode="contain"></Image>
           </View>
         </View>
