@@ -1,4 +1,4 @@
-package com.rhythm;
+package com.coffeehub;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Rhythm";
+    return "CoffeeHub";
   }
 
   /**

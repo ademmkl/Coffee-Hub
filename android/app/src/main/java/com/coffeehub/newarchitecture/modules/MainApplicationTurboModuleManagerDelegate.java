@@ -1,4 +1,4 @@
-package com.rhythm.newarchitecture.modules;
+package com.coffeehub.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

@@ -1,4 +1,4 @@
-package com.rhythm.newarchitecture;
+package com.coffeehub.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.rhythm.BuildConfig;
-import com.rhythm.newarchitecture.components.MainComponentsRegistry;
-import com.rhythm.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.coffeehub.BuildConfig;
+import com.coffeehub.newarchitecture.components.MainComponentsRegistry;
+import com.coffeehub.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
