@@ -7,38 +7,47 @@ import React, {useEffect, useState} from 'react';
    TouchableOpacity,
    Image
  } from 'react-native';
+ import { useDispatch, useSelector } from "react-redux"
 
  import Card from '../CoffeeCard';
 
  const Home = () => {
 
-  const [coffees, setCoffees] = useState([
+  const dispatch = useDispatch();
+  const {GeneralResponse} = useSelector(state => state)
+
+  const coffees=[
     {
       url:"https://freesvg.org/img/pitr_Coffee_cup_icon.png",
       name: "Espresso",
-      id: 1
+      id: 1,
+      price:20
     },
     {
       url:"https://www.shareicon.net/data/2016/08/01/805158_coffee_512x512.png",
       name:"Cappuccino",
-      id:2
+      id:2,
+      price:15
     },
     {
       url:"https://cdn-icons-png.flaticon.com/512/172/172869.png",
       name:"Macchiato",
-      id:3
+      id:3,
+      price:22
     },
     {
       url:"https://cdn.iconscout.com/icon/free/png-256/mocha-3962507-3283389.png",
       name:"Mocha",
-      id:4
+      id:4,
+      price:24
     },
     {
       url:"https://cdn-icons-png.flaticon.com/512/1365/1365585.png",
       name:"Latte",
-      id:5
+      id:5,
+      price:18
     }
-  ]);
+  ];
 
 
   return (
@@ -64,6 +73,7 @@ import React, {useEffect, useState} from 'react';
                 key={val?.id}
                 url={val?.url}
                 name={val?.name}
+                price={val?.price}
               />
             )
           }
